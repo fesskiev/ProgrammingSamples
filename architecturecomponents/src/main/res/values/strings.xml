@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ArchComponents</string>
+
+    <string name="open_weather_key">553963293736d81e4f487f5010066fc3</string>
+
+    <string name="shackbar_loading_error">Loading Error!</string>
+    <string name="shackbar_not_internet_connection">No Internet connection. Fetching data from db!</string>
+
+    <string name="search_hint">Search City</string>
+
+    <string name="snackbar_permission_title">Please turn on this permissions for using location updates</string>
+    <string name="snackbar_permission_button">OK</string>
+</resources>

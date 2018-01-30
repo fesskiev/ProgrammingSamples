@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/gcButton"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="@string/title_activity_gc" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/androidButton"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/title_activity_android" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/threadsButton"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/title_activity_threads" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/algorithmButton"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/title_activity_algorithm" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/viewsButton"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/title_activity_views" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/rxJavaButton"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/title_activity_rx" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

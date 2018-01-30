@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KotlinSamples</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="last_fm_api_key">adc1430e56411c85fadf04c03b54068f</string>
+
+</resources>

@@ -1,0 +1,93 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+
+        applicationId "com.fesskiev.architecturecomponents"
+
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode rootProject.versionCodeApp
+        versionName rootProject.versionName
+
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("debug.keystore")
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibVersion"
+    compile "com.android.support:cardview-v7:$rootProject.supportLibVersion"
+    compile "com.android.support:design:$rootProject.supportLibVersion"
+    compile "com.android.support:support-v4:$rootProject.supportLibVersion"
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+    compile "com.squareup.okhttp3:okhttp:$rootProject.okhttp"
+    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.gson"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.rxjavaAdapter"
+    compile "com.github.bumptech.glide:glide:$rootProject.glide"
+
+    implementation "android.arch.lifecycle:common-java8:$rootProject.archComponents"
+    implementation "android.arch.lifecycle:extensions:$rootProject.archComponents"
+    testImplementation "android.arch.core:core-testing:$rootProject.archComponents"
+    implementation "android.arch.lifecycle:reactivestreams:$rootProject.archComponents"
+    implementation "android.arch.persistence.room:runtime:$rootProject.archComponents"
+    annotationProcessor "android.arch.persistence.room:compiler:$rootProject.archComponents"
+    implementation "android.arch.persistence.room:rxjava2:$rootProject.archComponents"
+
+    implementation "com.google.android.gms:play-services-maps:$rootProject.playServices"
+    compile "com.google.android.gms:play-services-location:$rootProject.playServices"
+
+    compile "com.google.dagger:dagger-android:$rootProject.dagger"
+    compile "com.google.dagger:dagger-android-support:$rootProject.dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger"
+
+    testImplementation "org.robolectric:robolectric:$rootProject.robolectric"
+
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
+    testCompile "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
+    testCompile "org.hamcrest:hamcrest-all:$rootProject.ext.hamcrestVersion"
+    testCompile "org.powermock:powermock-module-junit4:$rootProject.ext.powerMockito"
+    testCompile "org.powermock:powermock-api-mockito:$rootProject.ext.powerMockito"
+
+    androidTestCompile "com.android.support.test:runner:$rootProject.ext.runnerVersion"
+    androidTestCompile "com.android.support.test:rules:$rootProject.ext.rulesVersion"
+
+}

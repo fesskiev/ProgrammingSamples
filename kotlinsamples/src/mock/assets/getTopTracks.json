@@ -1,0 +1,47 @@
+{
+  "tracks": {
+    "track": [
+      {
+        "name": "All I Want for Christmas Is You",
+        "duration": "0",
+        "playcount": "3205935",
+        "listeners": "642921",
+        "mbid": "a6fab057-cf3a-4456-950e-d3edaf219326",
+        "url": "https://www.last.fm/music/Mariah+Carey/_/All+I+Want+for+Christmas+Is+You",
+        "streamable": {
+          "#text": "0",
+          "fulltrack": "0"
+        },
+        "artist": {
+          "name": "Mariah Carey",
+          "mbid": "494e8d09-f85b-4543-892f-a5096aed1cd4",
+          "url": "https://www.last.fm/music/Mariah+Carey"
+        },
+        "image": [
+          {
+            "#text": "https://lastfm-img2.akamaized.net/i/u/34s/dc0a073d325b4f86a1ac70a4e813e04a.png",
+            "size": "small"
+          },
+          {
+            "#text": "https://lastfm-img2.akamaized.net/i/u/64s/dc0a073d325b4f86a1ac70a4e813e04a.png",
+            "size": "medium"
+          },
+          {
+            "#text": "https://lastfm-img2.akamaized.net/i/u/174s/dc0a073d325b4f86a1ac70a4e813e04a.png",
+            "size": "large"
+          },
+          {
+            "#text": "https://lastfm-img2.akamaized.net/i/u/300x300/dc0a073d325b4f86a1ac70a4e813e04a.png",
+            "size": "extralarge"
+          }
+        ]
+      }
+    ],
+    "@attr": {
+      "page": "1",
+      "perPage": "1",
+      "totalPages": "23099789",
+      "total": "23099789"
+    }
+  }
+}

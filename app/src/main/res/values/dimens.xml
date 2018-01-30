@@ -1,0 +1,19 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="mark_bold_width">5dp</dimen>
+    <dimen name="mark_thin_width">2dp</dimen>
+    <dimen name="circle_stroke_width">7dp</dimen>
+    <dimen name="seconds_stroke_width">2dp</dimen>
+    <dimen name="minutes_stroke_width">4dp</dimen>
+    <dimen name="hours_stroke_width">5dp</dimen>
+    <dimen name="clock_text_size">22dp</dimen>
+    <dimen name="radius_clock_digits">120dp</dimen>
+    <dimen name="radius_outer_circle">100dp</dimen>
+    <dimen name="radius_inner_circle">3dp</dimen>
+    <dimen name="seconds_line_size">90dp</dimen>
+    <dimen name="minutes_line_size">90dp</dimen>
+    <dimen name="mark_line_size">6dp</dimen>
+    <dimen name="hours_line_size">75dp</dimen>
+
+</resources>
