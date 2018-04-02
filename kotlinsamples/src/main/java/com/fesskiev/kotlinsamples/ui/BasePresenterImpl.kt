@@ -2,23 +2,19 @@ package com.fesskiev.kotlinsamples.ui
 
 import com.fesskiev.kotlinsamples.domain.entity.ErrorResponse
 import com.google.gson.Gson
-import io.reactivex.disposables.CompositeDisposable
 import okhttp3.ResponseBody
-import retrofit2.HttpException
 import java.io.IOException
+import retrofit2.HttpException
 import java.net.SocketTimeoutException
 
 
-open class BasePresenterImpl(private var compositeDisposable: CompositeDisposable,
-                             private var view: BaseView) : BasePresenter {
+open class BasePresenterImpl(private var view: BaseView) : BasePresenter {
 
     override fun detach() {
-        if (!compositeDisposable.isDisposed) {
-            compositeDisposable.dispose()
-        }
+
     }
 
-    fun showError(e: Throwable) {
+    fun showError(e: Exception) {
         if (e is HttpException) {
             val responseBody = e.response().errorBody()
             view.showResponseError(getErrorMessage(responseBody))

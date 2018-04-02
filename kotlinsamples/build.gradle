@@ -56,10 +56,10 @@ dependencies {
 
     compile "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.gson"
-    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.rxjavaAdapter"
+    compile "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$rootProject.coroutinesAdapter"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.interceptor"
 
-    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
-    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
 
     kapt "com.google.dagger:dagger-compiler:$dagger"
     kapt "com.google.dagger:dagger-android-processor:$dagger"

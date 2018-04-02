@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -53,5 +53,7 @@ ext {
     dagger = '2.13'
     playServices = '11.6.0'
     archComponents = '1.0.0'
-
+    coroutines = '0.21'
+    coroutinesAdapter = '1.0.0'
+    interceptor = '3.9.1'
 }

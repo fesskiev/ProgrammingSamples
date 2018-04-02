@@ -3,7 +3,6 @@ package com.fesskiev.kotlinsamples.ui.top
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.util.Log
-import android.view.View
 import com.fesskiev.kotlinsamples.R
 import com.fesskiev.kotlinsamples.domain.entity.Track
 import dagger.android.support.DaggerAppCompatActivity
@@ -33,7 +32,9 @@ class TopTracksActivity : DaggerAppCompatActivity(), TopTracksContract.View {
     }
 
     override fun showTopTracks(tracks: List<Track>?) {
-
+        tracks?.iterator()?.forEach {
+            Log.wtf("track", it.toString())
+        }
     }
 
     override fun showResponseError(message: String) {

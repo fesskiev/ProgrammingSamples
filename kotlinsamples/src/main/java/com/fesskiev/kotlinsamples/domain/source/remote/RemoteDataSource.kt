@@ -4,7 +4,7 @@ import android.content.Context
 import com.fesskiev.kotlinsamples.R
 import com.fesskiev.kotlinsamples.domain.entity.TopTracks
 import com.fesskiev.kotlinsamples.domain.source.DataSource
-import io.reactivex.Single
+import kotlinx.coroutines.experimental.Deferred
 import retrofit2.Retrofit
 import java.util.LinkedHashMap
 
@@ -13,7 +13,7 @@ class RemoteDataSource(private val context: Context, retrofit: Retrofit) : DataS
 
     private val service: ApiService = retrofit.create(ApiService::class.java)
 
-    override fun getTopTracks(): Single<TopTracks> {
+    override fun getTopTracks(): Deferred<TopTracks> {
         return service.getTopTracks(topTracksParams())
     }
 

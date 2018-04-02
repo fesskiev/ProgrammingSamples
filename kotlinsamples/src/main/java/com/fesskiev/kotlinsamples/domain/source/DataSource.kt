@@ -1,10 +1,9 @@
 package com.fesskiev.kotlinsamples.domain.source
 
 import com.fesskiev.kotlinsamples.domain.entity.TopTracks
-import io.reactivex.Single
-
+import kotlinx.coroutines.experimental.Deferred
 
 interface DataSource {
 
-    fun getTopTracks(): Single<TopTracks>
+    fun getTopTracks(): Deferred<TopTracks>
 }
