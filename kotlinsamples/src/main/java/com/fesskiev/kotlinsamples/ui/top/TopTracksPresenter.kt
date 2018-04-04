@@ -1,7 +1,5 @@
 package com.fesskiev.kotlinsamples.ui.top
 
-import android.os.Looper
-import android.util.Log
 import com.fesskiev.kotlinsamples.domain.entity.TopTracks
 import com.fesskiev.kotlinsamples.domain.source.DataRepository
 import com.fesskiev.kotlinsamples.ui.BasePresenterImpl
@@ -10,18 +8,20 @@ import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
 
 class TopTracksPresenter(var dataRepository: DataRepository,
-                         var view: TopTracksContract.View) : BasePresenterImpl(view), TopTracksContract.Presenter {
+                         var view: TopTracksContract.View?) : BasePresenterImpl(view), TopTracksContract.Presenter {
 
     private var job: Job? = null
 
     override fun getTopTracks() {
         job = launch(UI) {
             try {
-                Log.wtf("test", "is main async: ${isMainThread()}")
+                showProgressView()
                 val topTracks = dataRepository.getTopTracks().await()
                 showTopTracks(topTracks)
             } catch (e: Exception) {
                 showError(e)
+            } finally {
+                hideProgressView()
             }
         }
     }
@@ -31,12 +31,15 @@ class TopTracksPresenter(var dataRepository: DataRepository,
         job?.cancel()
     }
 
-    private fun showTopTracks(topTracks: TopTracks) {
-        Log.wtf("test", "is main show: ${isMainThread()}")
-        view.showTopTracks(topTracks.tracks.trackList)
+    private fun showProgressView() {
+        view?.showProgressView()
     }
 
-    private fun isMainThread(): Boolean {
-        return Looper.myLooper() == Looper.getMainLooper()
+    private fun hideProgressView() {
+        view?.hideProgressView()
+    }
+
+    private fun showTopTracks(topTracks: TopTracks) {
+        view?.showTopTracks(topTracks.tracks.trackList)
     }
 }

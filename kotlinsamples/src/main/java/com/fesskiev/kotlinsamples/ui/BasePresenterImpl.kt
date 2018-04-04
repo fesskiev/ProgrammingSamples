@@ -8,18 +8,18 @@ import retrofit2.HttpException
 import java.net.SocketTimeoutException
 
 
-open class BasePresenterImpl(private var view: BaseView) : BasePresenter {
+open class BasePresenterImpl(private var view: BaseView?) : BasePresenter {
 
     fun showError(e: Exception) {
         if (e is HttpException) {
             val responseBody = e.response().errorBody()
-            view.showResponseError(getErrorMessage(responseBody))
+            view?.showResponseError(getErrorMessage(responseBody))
         } else if (e is SocketTimeoutException) {
-            view.showTimeoutError()
+            view?.showTimeoutError()
         } else if (e is IOException) {
-            view.showNetworkError()
+            view?.showNetworkError()
         } else {
-            view.showUnknownError()
+            view?.showUnknownError()
         }
     }
 

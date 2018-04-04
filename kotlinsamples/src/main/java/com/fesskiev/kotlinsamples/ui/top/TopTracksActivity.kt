@@ -3,6 +3,8 @@ package com.fesskiev.kotlinsamples.ui.top
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import com.fesskiev.kotlinsamples.R
 import com.fesskiev.kotlinsamples.domain.entity.Track
 import dagger.android.support.DaggerAppCompatActivity
@@ -45,6 +47,14 @@ class TopTracksActivity : DaggerAppCompatActivity(), TopTracksContract.View {
         if (tracks != null) {
             adapter.refresh(tracks)
         }
+    }
+
+    override fun showProgressView() {
+        progressBar.visibility = VISIBLE
+    }
+
+    override fun hideProgressView() {
+        progressBar.visibility = GONE
     }
 
     override fun showResponseError(message: String) {

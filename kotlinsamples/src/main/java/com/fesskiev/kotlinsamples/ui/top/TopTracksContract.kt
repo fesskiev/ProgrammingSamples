@@ -5,7 +5,7 @@ import com.fesskiev.kotlinsamples.ui.BaseView
 
 class TopTracksContract {
 
-    interface View : BaseView{
+    interface View : BaseView {
 
         fun showTopTracks(tracks: List<Track>?)
     }
