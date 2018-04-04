@@ -59,7 +59,7 @@ dependencies {
     compile "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$rootProject.coroutinesAdapter"
     compile "com.squareup.okhttp3:logging-interceptor:$rootProject.interceptor"
 
-    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
 
     kapt "com.google.dagger:dagger-compiler:$dagger"
     kapt "com.google.dagger:dagger-android-processor:$dagger"

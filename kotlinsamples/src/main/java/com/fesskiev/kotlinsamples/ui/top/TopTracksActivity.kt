@@ -2,12 +2,12 @@ package com.fesskiev.kotlinsamples.ui.top
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.util.Log
+import android.support.v7.widget.LinearLayoutManager
 import com.fesskiev.kotlinsamples.R
 import com.fesskiev.kotlinsamples.domain.entity.Track
 import dagger.android.support.DaggerAppCompatActivity
 
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_top_tracks.*
 import javax.inject.Inject
 
 class TopTracksActivity : DaggerAppCompatActivity(), TopTracksContract.View {
@@ -16,14 +16,24 @@ class TopTracksActivity : DaggerAppCompatActivity(), TopTracksContract.View {
     @JvmField
     var presenter: TopTracksPresenter? = null
 
+    private lateinit var adapter: TopTracksAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_top_tracks)
         setSupportActionBar(toolbar)
-
+        setRecyclerView()
         fetchTopTracksButton.setOnClickListener({
             presenter?.getTopTracks()
         })
+    }
+
+    private fun setRecyclerView() {
+        val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager = linearLayoutManager
+        adapter = TopTracksAdapter()
+        adapter.setHasStableIds(true)
+        recyclerView.adapter = adapter
     }
 
     override fun onDestroy() {
@@ -32,8 +42,8 @@ class TopTracksActivity : DaggerAppCompatActivity(), TopTracksContract.View {
     }
 
     override fun showTopTracks(tracks: List<Track>?) {
-        tracks?.iterator()?.forEach {
-            Log.wtf("track", it.toString())
+        if (tracks != null) {
+            adapter.refresh(tracks)
         }
     }
 

@@ -10,10 +10,6 @@ import java.net.SocketTimeoutException
 
 open class BasePresenterImpl(private var view: BaseView) : BasePresenter {
 
-    override fun detach() {
-
-    }
-
     fun showError(e: Exception) {
         if (e is HttpException) {
             val responseBody = e.response().errorBody()
@@ -29,5 +25,9 @@ open class BasePresenterImpl(private var view: BaseView) : BasePresenter {
 
     private fun getErrorMessage(responseBody: ResponseBody?): String {
         return Gson().fromJson(responseBody?.string(), ErrorResponse::class.java).message
+    }
+
+    override fun detach() {
+
     }
 }
