@@ -24,18 +24,11 @@
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="52dp"
-        android:layout_height="53dp"
+        android:layout_height="52dp"
         android:layout_gravity="center"
         android:indeterminateTint="@color/primary"
         android:indeterminateTintMode="src_atop"
         android:visibility="invisible" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/item_track" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fetchTopTracksButton"
@@ -45,5 +38,12 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_dialog_email"
         app:fabSize="normal" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_track" />
 
 </android.support.design.widget.CoordinatorLayout>

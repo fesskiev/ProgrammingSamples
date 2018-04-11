@@ -1,11 +1,11 @@
 package com.fesskiev.kotlinsamples.ui.top
 
 import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.fesskiev.kotlinsamples.R
 import com.fesskiev.kotlinsamples.domain.entity.Track
+import com.fesskiev.kotlinsamples.inflate
 import kotlinx.android.synthetic.main.item_track.view.*
 
 class TopTracksAdapter : RecyclerView.Adapter<TopTracksAdapter.ViewHolder>() {
@@ -41,6 +41,3 @@ class TopTracksAdapter : RecyclerView.Adapter<TopTracksAdapter.ViewHolder>() {
     }
 }
 
-private fun ViewGroup.inflate(layoutRes: Int): View {
-    return LayoutInflater.from(context).inflate(layoutRes, this, false)
-}
