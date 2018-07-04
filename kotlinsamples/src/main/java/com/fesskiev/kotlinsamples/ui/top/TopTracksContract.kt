@@ -7,7 +7,7 @@ class TopTracksContract {
 
     interface View : BaseView {
 
-        fun showTopTracks(tracks: List<Track>?)
+        fun showTopTracks(tracks: List<Track>)
     }
 
     interface Presenter {
