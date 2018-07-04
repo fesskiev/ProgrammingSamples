@@ -2,7 +2,8 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,12 +21,12 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="?attr/actionBarSize"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -51,6 +52,14 @@
                 android:layout_height="64dp"
                 android:layout_marginTop="15dp"
                 android:text="@string/title_activity_threads" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/threadsAndroidButton"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/title_activity_threads_android" />
 
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/algorithmButton"

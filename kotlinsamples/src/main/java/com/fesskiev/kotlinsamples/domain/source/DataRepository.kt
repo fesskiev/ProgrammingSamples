@@ -1,6 +1,7 @@
 package com.fesskiev.kotlinsamples.domain.source
 
 import com.fesskiev.kotlinsamples.domain.entity.TopTracks
+import com.fesskiev.kotlinsamples.domain.source.remote.DataSource
 import com.fesskiev.kotlinsamples.domain.source.remote.RemoteDataSource
 import kotlinx.coroutines.experimental.Deferred
 

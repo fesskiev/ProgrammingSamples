@@ -3,6 +3,7 @@ package com.fesskiev.kotlinsamples.ui.top
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.util.Log
+import android.view.View.*
 import com.fesskiev.kotlinsamples.R
 import com.fesskiev.kotlinsamples.domain.entity.Track
 import dagger.android.support.DaggerAppCompatActivity
@@ -21,9 +22,9 @@ class TopTracksActivity : DaggerAppCompatActivity(), TopTracksContract.View {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fetchTopTracksButton.setOnClickListener({
+        fetchTopTracksButton.setOnClickListener {
             presenter?.getTopTracks()
-        })
+        }
     }
 
     override fun onDestroy() {
@@ -51,5 +52,13 @@ class TopTracksActivity : DaggerAppCompatActivity(), TopTracksContract.View {
 
     override fun showUnknownError() {
         Snackbar.make(coordinatorLayout, "Unknown Error!", Snackbar.LENGTH_LONG).show()
+    }
+
+    override fun showProgressBar() {
+        progressBar.visibility = VISIBLE
+    }
+
+    override fun hideProgressBar() {
+        progressBar.visibility = INVISIBLE
     }
 }

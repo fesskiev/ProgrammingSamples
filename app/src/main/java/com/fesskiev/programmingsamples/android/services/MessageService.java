@@ -15,7 +15,7 @@ public class MessageService extends Service {
     private static final String TAG = MessageService.class.getSimpleName();
     public static final int MESSAGE = 0;
 
-    private Messenger messenger = new Messenger(new MessageHanlder());
+    private Messenger messenger = new Messenger(new MessageHandler());
 
     @Override
     public void onCreate() {
@@ -38,7 +38,7 @@ public class MessageService extends Service {
         return messenger.getBinder();
     }
 
-    class MessageHanlder extends Handler {
+    class MessageHandler extends Handler {
 
         @Override
         public void handleMessage(Message msg) {

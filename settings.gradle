@@ -1,1 +1,1 @@
-include ':app', ':architecturecomponents', ':kotlinsamples'
+include ':app', ':architecturecomponents', ':kotlinsamples', ':graphql'

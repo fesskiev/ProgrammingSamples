@@ -11,7 +11,8 @@ public class RaceConditions {
 
         public void increment() {
             for (count = 0; count < 5; count++) {
-                Log.wtf(RaceConditions.class.getSimpleName(), "count: " + count + " thread: " + Thread.currentThread().getName());
+                Log.wtf(RaceConditions.class.getSimpleName(), "count: " + count + " thread: " + Thread.currentThread().getName()
+                + " state: " + Thread.currentThread().getState().name() + " priority: " + Thread.currentThread().getPriority());
             }
         }
     }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_document">query UserQuery { viewer { user { name avatar { url } } } }</string>
+</resources>

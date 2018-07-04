@@ -3,7 +3,6 @@ package com.fesskiev.kotlinsamples.domain.source.remote
 import android.content.Context
 import com.fesskiev.kotlinsamples.R
 import com.fesskiev.kotlinsamples.domain.entity.TopTracks
-import com.fesskiev.kotlinsamples.domain.source.DataSource
 import kotlinx.coroutines.experimental.Deferred
 import retrofit2.Retrofit
 import java.util.LinkedHashMap

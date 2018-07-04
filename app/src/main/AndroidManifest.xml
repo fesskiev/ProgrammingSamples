@@ -21,6 +21,9 @@
             android:name=".gc.GCActivity"
             android:label="@string/title_activity_gc" />
         <activity
+            android:name=".android.threads.AndroidThreadsActivity"
+            android:label="@string/title_activity_gc" />
+        <activity
             android:name=".android.AndroidSystemActivity"
             android:label="@string/title_activity_android"
             android:taskAffinity="" />

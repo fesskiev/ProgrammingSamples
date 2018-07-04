@@ -13,9 +13,8 @@ abstract class TopTracksModule {
 
         @JvmStatic
         @Provides
-        fun provideTopTracksPresenter(
-                                      dataRepository: DataRepository, view: TopTracksContract.View): TopTracksPresenter {
-            return TopTracksPresenter( dataRepository, view)
+        fun provideTopTracksPresenter(dataRepository: DataRepository, view: TopTracksContract.View): TopTracksPresenter {
+            return TopTracksPresenter(dataRepository, view)
         }
     }
 

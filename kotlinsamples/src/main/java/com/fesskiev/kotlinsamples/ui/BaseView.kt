@@ -10,4 +10,8 @@ interface BaseView {
     fun showNetworkError()
 
     fun showUnknownError()
+
+    fun showProgressBar()
+
+    fun hideProgressBar()
 }
